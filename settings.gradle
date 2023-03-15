@@ -1,0 +1,33 @@
+rootProject.name = 'H2BTrial'
+
+
+
+SortedSet<AccountingEvent> accountingEvents = new TreeSet<>();
+        accountingEvents.add(createAccountingEvent());
+
+        SortedSet<AccountEntry> accountEntries = new TreeSet<>();
+        accountEntries.add(createAccountEntry());
+
+        
+
+        loanEntity.setAccountingEvents(accountingEvents);
+
+
+
+
+        private AccountingEvent createAccountingEvent() {
+        AccountingEvent accountingEvent = new AccountingEvent();
+        accountingEvent.setId(111L);
+        accountingEvent.setVersion(1L);
+        return accountingEvent;
+    }
+    private AccountEntry createAccountEntry() {
+        AccountEntry accountEntry = new AccountEntry();
+        accountEntry.setId(11L);
+        accountEntry.setVersion(0L);
+
+        return accountEntry;
+    }
+
+
+    assertEquals(loanEntity.getAccountingEvents().first().getId(), retrievedLoanEntity.getAccountingEvents().first().getId());
